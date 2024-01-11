@@ -44,8 +44,12 @@ while flag:
     break    
 
 if st.button("Continue"):
-    st.write("In processing....")
+    processing_placeholder = st.empty()
+    processing_placeholder.text("In processing....")
+    
     answer = chain({"query": user_question})["result"]
+
+    processing_placeholder.text("Processing complete!")
     st.session_state["user"].append(user_question)
     st.session_state["assistant"].append(answer)
 
