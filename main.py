@@ -1,23 +1,13 @@
 import streamlit as st
 from app import create_vector_db, get_qa_chain
-from ui import user_template, bot_template
+from ui import user_template, assistant_template
 
-# st.title("Medbot")
-
-# question = st.text_input("Question: ")
-
-# if question:
-#     chain = get_qa_chain()
-#     response = chain(question)
-
-#     st.header("Answer:")
-#     st.write(response["result"])
 def display_conversation(history):
 
     for i in range(len(history["assistant"])):
         st.write(user_template.replace(
                 "{{MSG}}", history["user"][i]), unsafe_allow_html=True)
-        st.write(bot_template.replace(
+        st.write(assistant_template.replace(
                 "{{MSG}}", history["assistant"][i]), unsafe_allow_html=True)
 
 def vectorize_pdf():

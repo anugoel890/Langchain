@@ -1,11 +1,9 @@
 from langchain.llms import CTransformers
 from langchain.text_splitter import CharacterTextSplitter
-
 import streamlit as st
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.chains import RetrievalQA
-# from ui import css, bot_template, user_template
 from langchain.llms import CTransformers
 from langchain import PromptTemplate
 import langchain
@@ -82,5 +80,5 @@ Correct answer:
     return chain 
 
 # chain = get_qa_chain()
-# print(chain("How to cure cough ?"))
-# print(chain("how to cure heartburn ?"))
+# print(chain("How to travel to Madhya Pradesh ?"))
+# print(chain("What time is the best to go to Madhya Pradesh ?"))
